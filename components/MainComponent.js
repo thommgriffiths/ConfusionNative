@@ -9,10 +9,6 @@ import { fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/
 
 const mapStateToProps = state => {
   return {
-    dishes: state.dishes,
-    comments: state.comments,
-    promotions: state.promotions,
-    leaders: state.leaders
   }
 }
 
@@ -272,14 +268,14 @@ class Main extends Component {
         this.props.fetchLeaders();
     }
 
-  render() {
- 
-    return(
-        <NavigationContainer>
-            <MainNavigatorDrawer/>
-        </NavigationContainer>
-    );
-  }
+    render() {
+    
+        return(
+            <NavigationContainer>
+                <MainNavigatorDrawer/>
+            </NavigationContainer>
+        );
+    }
 }
 
 const styles = StyleSheet.create({

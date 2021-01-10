@@ -8,7 +8,7 @@ const mapStateToProps = state => {
     return {
       leaders: state.leaders
     }
-  }
+}
 
 class About extends Component{
 
