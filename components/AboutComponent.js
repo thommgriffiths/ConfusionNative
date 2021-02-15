@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import { SafeAreaView, ScrollView, View, FlatList, Text } from 'react-native';
 import { Container, ListItem, Card } from 'react-native-elements';
+
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 
@@ -35,10 +36,9 @@ class About extends Component{
                 </Card>
                 <Card title="Corporate Leadership">
                     <FlatList 
-                        title= "Corporate Leadership"
-                        data={this.props.leaders.leaders}
-                        renderItem={renderLeaderItem}
-                        keyExtractor={item => item.id.toString()}
+                    data={this.props.leaders.leaders}
+                    renderItem={renderLeader}
+                    keyExtractor={item => item.id.toString()}
                     />
                 </Card>
             </ScrollView>

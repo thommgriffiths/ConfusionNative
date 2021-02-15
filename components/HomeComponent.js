@@ -4,11 +4,12 @@ import { Card } from "react-native-elements";
 import { connect } from "react-redux";
 import { baseUrl } from "../shared/baseUrl";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     dishes: state.dishes,
+    comments: state.comments,
     promotions: state.promotions,
-    leaders: state.leaders,
+    leaders: state.leaders
   }
 }
 
@@ -38,21 +39,9 @@ class Home extends Component {
   render() {
     return (
       <ScrollView>
-        <RenderItem
-          item={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
-        />
-        <RenderItem
-          item={
-            this.props.promotions.promotions.filter(
-              (promo) => promo.featured
-            )[0]
-          }
-        />
-        <RenderItem
-          item={
-            this.props.leaders.leaders.filter((leader) => leader.featured)[0]
-          }
-        />
+                <RenderItem item={this.props.dishes.dishes.filter((dish) => dish.featured)[0]} />
+                <RenderItem item={this.props.promotions.promotions.filter((promo) => promo.featured)[0]} />
+                <RenderItem item={this.props.leaders.leaders.filter((leader) => leader.featured)[0]} />
       </ScrollView>
     );
   }
